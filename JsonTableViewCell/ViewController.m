@@ -30,7 +30,6 @@
     self.title = @"JsonTableViewCell";
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    
     NSError *error;
 
     [self initViews];
@@ -61,9 +60,11 @@
         //按数组中的索引取出对应的字典
         NSDictionary *listdic = [list objectAtIndex:i];
         //通过字典中的key取出对应value,并且强化为NSString类型
-        NSString *teamname = (NSString *)[listdic objectForKey:@"name_j"];
+        NSString *teamname = (NSString *)[listdic objectForKey:@"Name_js"];
         
-        //将获取
+        //将获取的value值放到数组容器中
+        [_listarr addObject:teamname];
+        NSLog(@"name内容为 --> %@",teamname);
     }
     
 }
@@ -77,23 +78,25 @@
     self.tableView.delegate =self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
+    [self.tableView reloadData];
+    
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return ;
+    //必须返回与数据容器一样的数量，否则会报数据越界错
+    return [_listarr count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+    /*if (cell == nil){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }*/
+    //将要显示的数据赋值到cell上
+    cell.textLabel.text = [_listarr objectAtIndex:indexPath.row];
     
     return cell;
 }
