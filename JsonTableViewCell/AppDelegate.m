@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    ViewController *VC1 = [[ViewController alloc]init];
+    UINavigationController *nav1 = [[UINavigationController alloc]initWithRootViewController:VC1];
+    self.window.rootViewController = nav1;
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self.window makeKeyAndVisible];//设置为主窗口并显示出来
     return YES;
 }
 

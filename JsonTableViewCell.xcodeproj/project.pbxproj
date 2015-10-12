@@ -58,14 +58,6 @@
 		B5B6DB0C1BCB2BD00091E5DF /* JsonTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				B5B6DB101BCB2BD00091E5DF /* AppDelegate.h */,
-				B5B6DB111BCB2BD00091E5DF /* AppDelegate.m */,
-				B5B6DB131BCB2BD00091E5DF /* ViewController.h */,
-				B5B6DB141BCB2BD00091E5DF /* ViewController.m */,
-				B5B6DB161BCB2BD00091E5DF /* Main.storyboard */,
-				B5B6DB191BCB2BD00091E5DF /* Assets.xcassets */,
-				B5B6DB1B1BCB2BD00091E5DF /* LaunchScreen.storyboard */,
-				B5B6DB1E1BCB2BD00091E5DF /* Info.plist */,
 				B5B6DB0D1BCB2BD00091E5DF /* Supporting Files */,
 			);
 			path = JsonTableViewCell;
@@ -74,6 +66,14 @@
 		B5B6DB0D1BCB2BD00091E5DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B5B6DB101BCB2BD00091E5DF /* AppDelegate.h */,
+				B5B6DB111BCB2BD00091E5DF /* AppDelegate.m */,
+				B5B6DB131BCB2BD00091E5DF /* ViewController.h */,
+				B5B6DB141BCB2BD00091E5DF /* ViewController.m */,
+				B5B6DB161BCB2BD00091E5DF /* Main.storyboard */,
+				B5B6DB191BCB2BD00091E5DF /* Assets.xcassets */,
+				B5B6DB1B1BCB2BD00091E5DF /* LaunchScreen.storyboard */,
+				B5B6DB1E1BCB2BD00091E5DF /* Info.plist */,
 				B5B6DB0E1BCB2BD00091E5DF /* main.m */,
 			);
 			name = "Supporting Files";
@@ -299,6 +299,7 @@
 				B5B6DB231BCB2BD00091E5DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
